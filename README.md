@@ -54,3 +54,40 @@ findLuckyNumbers(from: luckyNumbers) { data in
   
   ![Test results](https://github.com/sonirudra/100-Days-of-SwiftUI/assets/145532030/b6454db7-4040-4d6d-8b55-5ec7722c683f)
 
+
+  
+## DAY 6 - 29 Feb 2024
+
+- completed structs, access control, static properties and methods
+- Code snippet for checkpoint 6:
+```swift
+struct Car {
+    let model: String
+    let numberOfSeates: Int
+    private var currentGear: Int = 1
+    
+    init(carModel model: String, seats numberOfSeates: Int) {
+        self.model = model
+        self.numberOfSeates = numberOfSeates
+    }
+    
+    mutating func changeGear(to gear: Int) {
+        if gear == self.currentGear {
+            print("No need to change the gear")
+        } else {
+            if (gear <= 10 && gear >= 1) {
+                print("Changing to the gear: \(gear)")
+                self.currentGear = gear
+                print("Car is going on gear: \(gear)")
+            } else {
+                print("can't change to the gear: \(gear)")
+            }
+        }
+    }
+}
+```
+
+- Test results
+
+  ![Test results](https://github.com/sonirudra/100-Days-of-SwiftUI/assets/145532030/9fecf612-3d29-4f03-8f75-b495170dcbc4)
+
